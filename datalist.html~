@@ -25,7 +25,7 @@
  			 });
 			alert(items);*/
   			
-        }
+        });
         }
             </script>
     </head>
@@ -48,7 +48,7 @@
         </div>
         <div class="right"></div>
         <div class="footer"></div>
-        </div>
+       
         
     </body>
 </html>
