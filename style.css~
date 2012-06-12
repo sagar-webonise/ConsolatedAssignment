@@ -1,0 +1,91 @@
+/* 
+    Document   : style
+    Created on : 12 Jun, 2012, 10:31:47 AM
+    Author     : webonise
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.content{
+	height: 790px;
+	width: 1580px;
+	border-width: 5px;
+	
+	border : 1px solid #D4D4D4;
+	position: relative;
+	
+	
+}
+.header{
+	height: 50px;
+	width: 1010px;
+	position: absolute;
+	top: 5%;
+	left: 18%;
+	border-width: 5px;
+
+	border : 2px solid #D4D4D4;
+	
+}
+
+.left{
+	height: 730px;
+	width: 250px;
+	border: 2px solid #D4D4D4;
+	position: absolute;
+	top: 4%;
+	left: 2%;
+	
+}
+
+.right{
+	height: 730px;
+	width: 250px;
+	border: 2px solid #D4D4D4;
+	position: absolute;
+	top: 4%;
+	right: 2%;
+}
+
+.center{
+	height: 597px;
+	width: 1002px;
+	border: 2px solid #D4D4D4;
+	position: absolute;
+	top: 12%;
+	left: 18.2%;
+	}
+
+.footer{
+	height: 50px;
+	width: 1010px;
+	position: absolute;
+	bottom: 5%;
+	left: 18%;
+	border-width: 5px;
+
+	border : 2px solid #D4D4D4;
+
+	}
+	
+.form{
+   height: 565px;
+	width: 500px;
+	position: absolute;
+	top:1%;
+	left: 25%;
+	border-width: 5px;
+   border-radius: 15px;
+   
+	border : 2px solid #D4D4D4;
+	padding: 10px;
+	clear: both;
+
+	}
+.form input{
+ 	
+}	
