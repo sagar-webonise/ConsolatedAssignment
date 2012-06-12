@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link  href="css/style.css" rel="stylesheet" type="text/css" >
+        <script type="text/javascript" src="js/jquery.js"></script>       
+        
+        
+        <script type="text/javascript">
+		 window.onload=dataListing();       
+        function dataListing(){
+        
+       /* $.get('http://blooming-beach-2334.herokuapp.com/users.json', function(data) {
+ 			 alert("funn");
+ 			 alert(data);
+			});*/
+			
+			
+			$.getJSON('http://blooming-beach-2334.herokuapp.com/users.json', function(data) {
+		  var items = [];
+        alert("he;lll");
+  			/*$.each(data, function	(key, val) {
+    		items.push('<li id="' + key + '">' + val + '</li>');
+ 			 });
+			alert(items);*/
+  			
+        }
+        }
+            </script>
+    </head>
+    <body>
+    
+    
+        <div class="content">
+        <div class="header"><h1>DATA LIST</h1></div>
+        <div class="left"></div>
+        <div class="center" >
+        <div class="form">
+          
+        
+        </div>
+         
+       
+			
+		
+			</div> 
+        </div>
+        <div class="right"></div>
+        <div class="footer"></div>
+        </div>
+        
+    </body>
+</html>

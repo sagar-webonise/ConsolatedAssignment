@@ -1,0 +1,5 @@
+Parameters: 
+{"utf8"=>"✓", "authenticity_token"=>"TWq5wTGiDBnUuWj3t6Qte9EhTJOWpHViSJYZTLVtsL4=", "user"=>{"name"=>"xyz", "email"=>"xyz@yopmail.com", "age"=>"99", "gender"=>"m", "address"=>"webonise", "description"=>"test", "pincode"=>"411048"}, "commit"=>"Create User"}
+[3:00:09 PM IST] Aditya Garg: http://blooming-beach-2334.herokuapp.com/users as a post req
+
+
