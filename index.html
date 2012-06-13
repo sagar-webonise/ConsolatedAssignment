@@ -8,10 +8,90 @@
         
         
         <script type="text/javascript">
-		          
-        function check(e_id){
-        //alert(id);   	 
-		 alert(document.getElementById(e_id).val);
+        var email_v =0 , name_v=0,age_v=0, addr_v=0, desc_v=0 , pin_v=0 , gend_v=0;
+		   function validateEmail(inputId){  
+   			var inputElement = document.getElementById(inputId);
+   			var errorElement = document.getElementById(inputId + "Error");
+   			var inputValue = inputElement.value;
+  		   	var atPos = inputValue.indexOf("@");
+    	   	var dotPos = inputValue.lastIndexOf(".");
+   	   	var isValid = (atPos > 0) && (dotPos > atPos + 1) && (inputValue.length > dotPos + 2);
+ 		 
+ 		   return isValid;
+ 			}  
+      
+      function check(e_id){
+   	 switch(e_id){
+   	 case "id_email":
+
+   	 					if(validateEmail(e_id))
+   	 					{
+							   document.getElementById(e_id).style.backgroundColor="green";
+							   email_v=1;   	 						
+   	 					}
+   	 				   else {
+   	 				   	document.getElementById(e_id).style.backgroundColor="red";
+   	 				   	email_v=0;
+   	 				   	}
+   	 				   
+   	 					break;
+
+       case "id_name":
+       
+       					var name1 = document.getElementById(e_id).value;
+       					if (name1){
+       					   name_v =1;
+       						document.getElementById(e_id).style.backgroundColor="green";
+       						}
+       						break;
+       					
+       case "id_age":
+   						var age = document.getElementById(e_id).value;
+   						if(!isNaN(age))
+   						  {
+   						  age_v =1;
+   						  document.getElementById(e_id).style.backgroundColor="green";
+   						  }
+   						  else
+   						  {
+   						  age_v =0;
+   						  document.getElementById(e_id).style.backgroundColor="red";
+   						  	}
+   						  break;
+      case "id_address":
+      					var addr = document.getElementById(e_id).value;
+      					if(addr)
+      					{
+      					addr_v=1;
+      					document.getElementById(e_id).style.backgroundColor="green";
+      					}
+      					break;
+       case "id_desc":
+      					var desc = document.getElementById(e_id).value;
+      					if(desc)
+      					{
+      					desc_v=1;
+      					document.getElementById(e_id).style.backgroundColor="green";
+      						
+      					}
+      					break;
+      case "id_pincode":
+     						var pincode = document.getElementById(e_id).value;
+     						if(!isNaN(pincode) && (pincode.length==6)){
+     						pin_v=1;
+      					document.getElementById(e_id).style.backgroundColor="green";
+     						
+     						}
+     						else{     						
+     						pin_v=0;
+      					document.getElementById(e_id).style.backgroundColor="red";
+     						}
+     						break;
+     						
+   						  
+   	 }  	  
+	
+	
 		 
         }
         
@@ -25,6 +105,7 @@
   				 if(radios[i].checked)
  			     gender = radios[i].value;
 			}	
+			
         
         var name1 = document.getElementById("id_name").value;
         var email = document.getElementById("id_email").value;
@@ -32,7 +113,17 @@
         var address = document.getElementById("id_address").value;
         var description1 = document.getElementById("id_desc").value;
         var pincode = document.getElementById("id_pincode").value;
-        
+      
+        if (!(name_v && email_v && age_v && addr_v && desc_v && pin_v)){  
+        		alert("See something went wrong\n* All fields are necessary \n* Red color indicate error");
+        		return false;
+        		}
+        if(!gender)
+			  {
+			  alert("Please select gender");
+			  return false;	
+			  }
+        		
 		  var post_data={
                 "utf8":"✓", 
                 "authenticity_token":"TWq5wTGiDBnUuWj3t6Qte9EhTJOWpHViSJYZTLVtsL4=", 
@@ -48,7 +139,7 @@
                             "commit":"Create User"
                 };        
      
-        /*$.ajax({
+       $.ajax({
         type: "POST",
         url: "http://blooming-beach-2334.herokuapp.com/users",
         data: post_data,
@@ -57,7 +148,7 @@
         alert(data);
           
         }});
-       */
+     
         alert("Data posted");
          
        
@@ -79,17 +170,17 @@
        <form action="">
 	  		<div class="row">
         <span class="label">NAME:</span>
-        <span class="formw" ><input type="text" onkeyup="check(id_name);" id="id_name"  size="25" /></span>
+        <span class="formw" ><input type="text" onkeyup="check('id_name');" id="id_name"  size="25" /></span>
         </div>
         
         <div class="row">
         <span class="label" >EMAIL:</span>
-        <span class="formw"><input type="text" onkeyup="check(id_email);" id="id_email" size="25" /></span>
+        <span class="formw"><input type="text" onkeyup="check('id_email');" id="id_email" size="25" /></span>
         </div>
         
         <div class="row">
         <span class="label" name="age" >AGE:</span>
-        <span class="formw"><input type="text" onkeyup="check(id_age)" id="id_age" size="2" /></span>
+        <span class="formw"><input type="text" onkeyup="check('id_age')" id="id_age" size="2" /></span>
         </div>
 
 		  <div class="row">
@@ -103,7 +194,7 @@
 	     <div class="row">
         <span class="label" name="address">ADDRESS:</span>
         <span class="formw">
-        <textarea cols="25" rows="8" onkeyup="check(id_address)" id="id_address"></textarea>
+        <textarea cols="25" rows="8" onkeyup="check('id_address')" id="id_address"></textarea>
          </span>
         </div>
        
@@ -111,13 +202,13 @@
 	  	  <div class="row">
         <span class="label">DESCRIPTION:</span>
         <span class="formw">
-        <textarea cols="25" rows="8" onkeyup="check(id_desc)" id="id_desc"></textarea>
+        <textarea cols="25" rows="8" onkeyup="check('id_desc')" id="id_desc"></textarea>
          </span>
         </div>
         
         <div class="row">
         <span class="label" name="pincode">PINCODE:</span>
-        <span class="formw"><input type="text" size="25" onkeyup="check(id_pincode)" id="id_pincode"/></span>
+        <span class="formw"><input type="text" size="25" onkeyup="check('id_pincode')" id="id_pincode"/></span>
         </div>
          
        </form>			
