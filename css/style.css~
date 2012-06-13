@@ -134,6 +134,24 @@ div.row span.formw {
 .list{
 	color: blue;
 }
-th {
-	background-color: #21112;
+
+
+root { 
+    display: block;
+}
+
+#indicate{
+	position: absolute;
+	float: right;
+	top: 20%;
+	right: 10%;
+	}
+	
+.dataurl{
+	position: absolute;	
+	font-size:20px; 
+	float:right	; 
+	padding-left:20px;
+	top: 15%;
+	right: 10%;
 }

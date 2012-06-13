@@ -26,7 +26,7 @@
       function check(e_id){
    	 switch(e_id){
                 case "id_email":
-
+								var email = document.getElementById(e_id).value;
                         if(validateEmail(e_id))
                         {
                                 document.getElementById(e_id).style.backgroundColor="green";
@@ -36,7 +36,10 @@
                         document.getElementById(e_id).style.backgroundColor="red";
                         email_v=0;
                         }
-
+					 if(!email){
+					 	      document.getElementById(e_id).style.backgroundColor="blue";
+                        email_v=0;
+					 	}
                         break;
 
             case "id_name":
@@ -46,7 +49,12 @@
                 name_v =1;
                         document.getElementById(e_id).style.backgroundColor="green";
                         }
+                if(!name1){
+					 	      document.getElementById(e_id).style.backgroundColor="blue";
+                        name1_v=0;
+					 	}
                         break;
+                        
 
             case "id_age":
                 var age = document.getElementById(e_id).value;
@@ -68,6 +76,10 @@
                 addr_v=1;
                 document.getElementById(e_id).style.backgroundColor="green";
                 }
+                if(!addr){
+					 	      document.getElementById(e_id).style.backgroundColor="blue";
+                        addr_v=0;
+					 	}
                 break;
             case "id_desc":
                 var desc = document.getElementById(e_id).value;
@@ -77,18 +89,29 @@
                 document.getElementById(e_id).style.backgroundColor="green";
 
                 }
+                if(!desc){
+					 	      document.getElementById(e_id).style.backgroundColor="blue";
+                        desc_v=0;
+					 	}
                 break;
+
             case "id_pincode":
+            
                 var pincode = document.getElementById(e_id).value;
                 if(!isNaN(pincode) && (pincode.length==6)){
-                pin_v=1;
-        document.getElementById(e_id).style.backgroundColor="green";
+          		      pin_v=1;
+       					 document.getElementById(e_id).style.backgroundColor="green";
 
                 }
                 else{     						
-                pin_v=0;
-        document.getElementById(e_id).style.backgroundColor="red";
+            		    pin_v=0;
+    					    document.getElementById(e_id).style.backgroundColor="red";
                 }
+                if(!pincode){
+					 	      document.getElementById(e_id).style.backgroundColor="blue";
+                        addr_v=0;
+					 	}
+                
                 break;
 
    						  
@@ -174,7 +197,7 @@
         <div class="left"></div>
         <div class="center" >
 			<br />        
-        <a href="datalist.html" style="font-size:20px;"> See Data List</a>
+        <a href="datalist.html" class="dataurl"style="font-size:20px; float:right ; padding-left:20px"> See Data List</a>
         <div class="form">
         
        <form action="">
@@ -227,7 +250,20 @@
            </div>
 			
 		
+	  
 			</div> 
+				
+			<table id="indicate" border="1px;">
+			<tr><td colspan="2">Indications</td></tr>
+			<tr>
+			 <th>right</th>
+			 <th>wrong</th></tr>
+			
+			<tr><td style="background-color:green; width:50px; height:50px"> </td>
+			<td style="background-color:red; width:50px; height:50px">   </td>
+			</tr>
+			
+			</table>
         </div>
         <div class="right"></div>
         <div class="footer"></div>
