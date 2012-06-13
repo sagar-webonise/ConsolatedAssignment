@@ -8,9 +8,6 @@
         
         
         <script type="text/javascript">
-
-   	
-
         var email_v =0 , name_v=0,age_v=0, addr_v=0, desc_v=0 , pin_v=0 , gend_v=0;
 		   function validateEmail(inputId){  
    			var inputElement = document.getElementById(inputId);
@@ -92,7 +89,6 @@
      						break;
      						
    						  
-
    	 }  	  
 	
 	
@@ -117,9 +113,6 @@
         var address = document.getElementById("id_address").value;
         var description1 = document.getElementById("id_desc").value;
         var pincode = document.getElementById("id_pincode").value;
-
-     
-       
       
         if (!(name_v && email_v && age_v && addr_v && desc_v && pin_v)){  
         		alert("See something went wrong\n* All fields are necessary \n* Red color indicate error");
@@ -130,10 +123,10 @@
 			  alert("Please select gender");
 			  return false;	
 			  }
-
         		
 		  var post_data={
-              
+                "utf8":"✓", 
+                "authenticity_token":"TWq5wTGiDBnUuWj3t6Qte9EhTJOWpHViSJYZTLVtsL4=", 
                 "user":{
                             "name":name1 ,
                             "email":email, 
@@ -146,10 +139,7 @@
                             "commit":"Create User"
                 };        
      
-
-      
        $.ajax({
- 
         type: "POST",
         url: "http://blooming-beach-2334.herokuapp.com/users",
         data: post_data,

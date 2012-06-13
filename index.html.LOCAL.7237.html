@@ -8,91 +8,22 @@
         
         
         <script type="text/javascript">
-
-   	
-
-        var email_v =0 , name_v=0,age_v=0, addr_v=0, desc_v=0 , pin_v=0 , gend_v=0;
-		   function validateEmail(inputId){  
-   			var inputElement = document.getElementById(inputId);
-   			var errorElement = document.getElementById(inputId + "Error");
-   			var inputValue = inputElement.value;
-  		   	var atPos = inputValue.indexOf("@");
-    	   	var dotPos = inputValue.lastIndexOf(".");
-   	   	var isValid = (atPos > 0) && (dotPos > atPos + 1) && (inputValue.length > dotPos + 2);
- 		 
- 		   return isValid;
+		   function validateEmail(elementValue){  
+   		var emailPattern = /^([_a-zA-Z0-9-]+)(\.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+([a-zA-Z]{2,3})$/;  
+   		return emailPattern.test(elementValue);  
  			}  
-      
       function check(e_id){
    	 switch(e_id){
    	 case "id_email":
-
-   	 					if(validateEmail(e_id))
+   	 					var email = document.getElementById(e_id).val;
+   	 					if (validateEmail(email))
    	 					{
-							   document.getElementById(e_id).style.backgroundColor="green";
-							   email_v=1;   	 						
+							   document.getElementById(e_id).style.backgroundColor="green";   	 						
    	 					}
-   	 				   else {
+   	 				   else 
    	 				   	document.getElementById(e_id).style.backgroundColor="red";
-   	 				   	email_v=0;
-   	 				   	}
-   	 				   
    	 					break;
-
-       case "id_name":
-       
-       					var name1 = document.getElementById(e_id).value;
-       					if (name1){
-       					   name_v =1;
-       						document.getElementById(e_id).style.backgroundColor="green";
-       						}
-       						break;
-       					
-       case "id_age":
-   						var age = document.getElementById(e_id).value;
-   						if(!isNaN(age))
-   						  {
-   						  age_v =1;
-   						  document.getElementById(e_id).style.backgroundColor="green";
-   						  }
-   						  else
-   						  {
-   						  age_v =0;
-   						  document.getElementById(e_id).style.backgroundColor="red";
-   						  	}
-   						  break;
-      case "id_address":
-      					var addr = document.getElementById(e_id).value;
-      					if(addr)
-      					{
-      					addr_v=1;
-      					document.getElementById(e_id).style.backgroundColor="green";
-      					}
-      					break;
-       case "id_desc":
-      					var desc = document.getElementById(e_id).value;
-      					if(desc)
-      					{
-      					desc_v=1;
-      					document.getElementById(e_id).style.backgroundColor="green";
-      						
-      					}
-      					break;
-      case "id_pincode":
-     						var pincode = document.getElementById(e_id).value;
-     						if(!isNaN(pincode) && (pincode.length==6)){
-     						pin_v=1;
-      					document.getElementById(e_id).style.backgroundColor="green";
-     						
-     						}
-     						else{     						
-     						pin_v=0;
-      					document.getElementById(e_id).style.backgroundColor="red";
-     						}
-     						break;
-     						
-   						  
-
+   	
    	 }  	  
 	
 	
@@ -109,7 +40,6 @@
   				 if(radios[i].checked)
  			     gender = radios[i].value;
 			}	
-			
         
         var name1 = document.getElementById("id_name").value;
         var email = document.getElementById("id_email").value;
@@ -117,23 +47,13 @@
         var address = document.getElementById("id_address").value;
         var description1 = document.getElementById("id_desc").value;
         var pincode = document.getElementById("id_pincode").value;
-
      
-       
-      
-        if (!(name_v && email_v && age_v && addr_v && desc_v && pin_v)){  
-        		alert("See something went wrong\n* All fields are necessary \n* Red color indicate error");
-        		return false;
-        		}
-        if(!gender)
-			  {
-			  alert("Please select gender");
-			  return false;	
-			  }
-
+        if (!(name1 && email && age && address && description1 && pincode))
+        		alert("See something missiing");
         		
 		  var post_data={
-              
+                "utf8":"✓", 
+                "authenticity_token":"TWq5wTGiDBnUuWj3t6Qte9EhTJOWpHViSJYZTLVtsL4=", 
                 "user":{
                             "name":name1 ,
                             "email":email, 
@@ -146,10 +66,7 @@
                             "commit":"Create User"
                 };        
      
-
-      
-       $.ajax({
- 
+      /*  $.ajax({
         type: "POST",
         url: "http://blooming-beach-2334.herokuapp.com/users",
         data: post_data,
@@ -158,7 +75,7 @@
         alert(data);
           
         }});
-     
+       */
         alert("Data posted");
          
        

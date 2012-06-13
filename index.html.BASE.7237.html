@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link  href="css/style.css" rel="stylesheet" type="text/css" >
+        <script type="text/javascript" src="js/jquery.js"></script>       
+        
+        
+        <script type="text/javascript">
+		          
+        function check(e_id){
+        //alert(id);   	 
+		 alert(document.getElementById(e_id).val);
+		 
+        }
+        
+        function submit_form(){
+        
+		  
+        var radios = document.getElementsByName('gender');
+			var gender = '';
+			for(var i=0;i<radios.length;i++)
+			{
+  				 if(radios[i].checked)
+ 			     gender = radios[i].value;
+			}	
+        
+        var name1 = document.getElementById("id_name").value;
+        var email = document.getElementById("id_email").value;
+        var age = document.getElementById("id_age").value;
+        var address = document.getElementById("id_address").value;
+        var description1 = document.getElementById("id_desc").value;
+        var pincode = document.getElementById("id_pincode").value;
+        
+		  var post_data={
+                "utf8":"✓", 
+                "authenticity_token":"TWq5wTGiDBnUuWj3t6Qte9EhTJOWpHViSJYZTLVtsL4=", 
+                "user":{
+                            "name":name1 ,
+                            "email":email, 
+                            "age":age ,
+                            "gender":gender, 
+                            "address":address, 
+                            "description":description1, 
+                            "pincode":pincode
+                            }, 
+                            "commit":"Create User"
+                };        
+     
+        /*$.ajax({
+        type: "POST",
+        url: "http://blooming-beach-2334.herokuapp.com/users",
+        data: post_data,
+        dataType: "json",
+        success: function(data){
+        alert(data);
+          
+        }});
+       */
+        alert("Data posted");
+         
+       
+       
+        }
+            </script>
+    </head>
+    <body>
+    
+    
+        <div class="content">
+        <div class="header"><h1>SUBMIT YOUR DATA</h1></div>
+        <div class="left"></div>
+        <div class="center" >
+			<br />        
+        <a href="datalist.html" style="font-size:20px;"> See Data List</a>
+        <div class="form">
+        
+       <form action="">
+	  		<div class="row">
+        <span class="label">NAME:</span>
+        <span class="formw" ><input type="text" onkeyup="check(id_name);" id="id_name"  size="25" /></span>
+        </div>
+        
+        <div class="row">
+        <span class="label" >EMAIL:</span>
+        <span class="formw"><input type="text" onkeyup="check(id_email);" id="id_email" size="25" /></span>
+        </div>
+        
+        <div class="row">
+        <span class="label" name="age" >AGE:</span>
+        <span class="formw"><input type="text" onkeyup="check(id_age)" id="id_age" size="2" /></span>
+        </div>
+
+		  <div class="row">
+        <span class="label"  >GENDER:</span>
+        
+        <span class="formw">
+         <span style="color:black">M</span> <input type="radio" name="gender" value="m" /> 
+         <span style="color:black">F</span> <input type="radio" name="gender" value="f"/></span>
+        </div>
+	
+	     <div class="row">
+        <span class="label" name="address">ADDRESS:</span>
+        <span class="formw">
+        <textarea cols="25" rows="8" onkeyup="check(id_address)" id="id_address"></textarea>
+         </span>
+        </div>
+       
+		        
+	  	  <div class="row">
+        <span class="label">DESCRIPTION:</span>
+        <span class="formw">
+        <textarea cols="25" rows="8" onkeyup="check(id_desc)" id="id_desc"></textarea>
+         </span>
+        </div>
+        
+        <div class="row">
+        <span class="label" name="pincode">PINCODE:</span>
+        <span class="formw"><input type="text" size="25" onkeyup="check(id_pincode)" id="id_pincode"/></span>
+        </div>
+         
+       </form>			
+			  <div class="row" style="float:right">
+			  <input type="submit" id="submit" value="" onclick="javascript:submit_form();" />
+           </div>
+			
+		
+			</div> 
+        </div>
+        <div class="right"></div>
+        <div class="footer"></div>
+        </div>
+        
+    </body>
+</html>
