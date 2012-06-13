@@ -73,11 +73,11 @@ root {
 	}
 	
 .form{
-   height: 565px;
-	width: 500px;
+   min-height: 565px;
+	min-width: 500px;
 	position: absolute;
 	top:1%;
-	left: 25%;
+	left: 10%;
 	border-width: 5px;
    border-radius: 15px;
    
@@ -130,3 +130,10 @@ div.row span.formw {
   width: 335px;
   text-align: left;
   } 
+  
+.list{
+	color: blue;
+}
+th {
+	background-color: #21112;
+}

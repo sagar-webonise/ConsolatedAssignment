@@ -7,50 +7,59 @@
         <script type="text/javascript" src="js/jquery.js"></script>       
         
         
-        <script type="text/javascript">
-		 window.onload=dataListing();       
-		 	
-        function dataListing(){
+      
+            <script type="text/javascript" >
+$(document).ready(function(){
+
+
+
+ $.ajax({   
+                              type: "GET",
+                                async:true,
+                                dataType:'json',
+                                url: "user.json",
+                                complete: function(data,data1) {
+                             
+                                 },
+                                 dataFilter:function(data){
+	                                 obj = JSON.parse(data);
+	                                 for(var i=0;i<obj.length;i++)
+	                                   $('#data').append("<tr><td>"+obj[i].name+"</td><td>"+obj[i].email+"</td><td>"+obj[i].age+"</td><td>"+obj[i].gender+"</td><td>"+obj[i].address+"</td><td>"+obj[i].pincode+"</td><td>"+obj[i].description+"</td></tr>")
+ 												     },
+                             		success:function(){
+                                    
+                                         }
+        });  
         
-        $.get('http://blooming-beach-2334.herokuapp.com/users.json', function(data) {
- 			 alert("funn");
- 			 alert(data);
-			});
-			
-			
-	
-		/*$.getJSON('http://blooming-beach-2334.herokuapp.com/users.json', function(data) {
-		  
-        alert("helll0");
-  			/*$.each(data, function	(key, val) {
-    		items.push('<li id="' + key + '">' + val + '</li>');
- 			 });
-			alert(items);
-  			
-        });*/
-        }
-            </script>
+         });            
+            
+            
+
+</script>
+
     </head>
     <body>
     
     
-        <div class="content">
-        <div class="header"><h1>DATA LIST</h1></div>
-        <div class="left"></div>
-        <div class="center" >
+        
         <div class="form">
-          
+        <h2>DATA FROM SERVER:</h2>
+        <table id="data" border="1px">
+		  <th>NAME</th>        
+		  <th>EMAIL</th>
+		  <th>AGE</th>
+		  <th>GENDER</th>
+		  <th>ADDRESS</th>
+		  <th>PINCODE</th>
+		  <th>DESCRIPTION</th>
+		            
         
         </div>
          
        
 			
 		
-			</div> 
-        </div>
-        <div class="right"></div>
-        <div class="footer"></div>
-       
+		 
         
     </body>
 </html>

@@ -25,72 +25,72 @@
       
       function check(e_id){
    	 switch(e_id){
-   	 case "id_email":
+                case "id_email":
 
-   	 					if(validateEmail(e_id))
-   	 					{
-							   document.getElementById(e_id).style.backgroundColor="green";
-							   email_v=1;   	 						
-   	 					}
-   	 				   else {
-   	 				   	document.getElementById(e_id).style.backgroundColor="red";
-   	 				   	email_v=0;
-   	 				   	}
-   	 				   
-   	 					break;
+                        if(validateEmail(e_id))
+                        {
+                                document.getElementById(e_id).style.backgroundColor="green";
+                                email_v=1;   	 						
+                        }
+                else {
+                        document.getElementById(e_id).style.backgroundColor="red";
+                        email_v=0;
+                        }
 
-       case "id_name":
-       
-       					var name1 = document.getElementById(e_id).value;
-       					if (name1){
-       					   name_v =1;
-       						document.getElementById(e_id).style.backgroundColor="green";
-       						}
-       						break;
-       					
-       case "id_age":
-   						var age = document.getElementById(e_id).value;
-   						if(!isNaN(age))
-   						  {
-   						  age_v =1;
-   						  document.getElementById(e_id).style.backgroundColor="green";
-   						  }
-   						  else
-   						  {
-   						  age_v =0;
-   						  document.getElementById(e_id).style.backgroundColor="red";
-   						  	}
-   						  break;
-      case "id_address":
-      					var addr = document.getElementById(e_id).value;
-      					if(addr)
-      					{
-      					addr_v=1;
-      					document.getElementById(e_id).style.backgroundColor="green";
-      					}
-      					break;
-       case "id_desc":
-      					var desc = document.getElementById(e_id).value;
-      					if(desc)
-      					{
-      					desc_v=1;
-      					document.getElementById(e_id).style.backgroundColor="green";
-      						
-      					}
-      					break;
-      case "id_pincode":
-     						var pincode = document.getElementById(e_id).value;
-     						if(!isNaN(pincode) && (pincode.length==6)){
-     						pin_v=1;
-      					document.getElementById(e_id).style.backgroundColor="green";
-     						
-     						}
-     						else{     						
-     						pin_v=0;
-      					document.getElementById(e_id).style.backgroundColor="red";
-     						}
-     						break;
-     						
+                        break;
+
+            case "id_name":
+
+                var name1 = document.getElementById(e_id).value;
+                if (name1){
+                name_v =1;
+                        document.getElementById(e_id).style.backgroundColor="green";
+                        }
+                        break;
+
+            case "id_age":
+                var age = document.getElementById(e_id).value;
+                if(!isNaN(age))
+                {
+                age_v =1;
+                document.getElementById(e_id).style.backgroundColor="green";
+                }
+                else
+                {
+                age_v =0;
+                document.getElementById(e_id).style.backgroundColor="red";
+                        }
+                break;
+            case "id_address":
+                var addr = document.getElementById(e_id).value;
+                if(addr)
+                {
+                addr_v=1;
+                document.getElementById(e_id).style.backgroundColor="green";
+                }
+                break;
+            case "id_desc":
+                var desc = document.getElementById(e_id).value;
+                if(desc)
+                {
+                desc_v=1;
+                document.getElementById(e_id).style.backgroundColor="green";
+
+                }
+                break;
+            case "id_pincode":
+                var pincode = document.getElementById(e_id).value;
+                if(!isNaN(pincode) && (pincode.length==6)){
+                pin_v=1;
+        document.getElementById(e_id).style.backgroundColor="green";
+
+                }
+                else{     						
+                pin_v=0;
+        document.getElementById(e_id).style.backgroundColor="red";
+                }
+                break;
+
    						  
 
    	 }  	  
@@ -102,21 +102,21 @@
         function submit_form(){
         
 		  
-        var radios = document.getElementsByName('gender');
-			var gender = '';
-			for(var i=0;i<radios.length;i++)
-			{
-  				 if(radios[i].checked)
- 			     gender = radios[i].value;
-			}	
-			
-        
-        var name1 = document.getElementById("id_name").value;
-        var email = document.getElementById("id_email").value;
-        var age = document.getElementById("id_age").value;
-        var address = document.getElementById("id_address").value;
-        var description1 = document.getElementById("id_desc").value;
-        var pincode = document.getElementById("id_pincode").value;
+            var radios = document.getElementsByName('gender');
+                            var gender = '';
+                            for(var i=0;i<radios.length;i++)
+                            {
+                                        if(radios[i].checked)
+                                    gender = radios[i].value;
+                            }	
+
+
+            var name1 = document.getElementById("id_name").value;
+            var email = document.getElementById("id_email").value;
+            var age = document.getElementById("id_age").value;
+            var address = document.getElementById("id_address").value;
+            var description1 = document.getElementById("id_desc").value;
+            var pincode = document.getElementById("id_pincode").value;
 
      
        
