@@ -45,13 +45,14 @@ $(document).ready(function(){
         <div class="form">
         <h2>DATA FROM SERVER:</h2>
         <table id="data" border="1px">
-		  <th>NAME</th>        
+		  <tr><th>NAME</th>        
 		  <th>EMAIL</th>
 		  <th>AGE</th>
 		  <th>GENDER</th>
 		  <th>ADDRESS</th>
 		  <th>PINCODE</th>
 		  <th>DESCRIPTION</th>
+		  </tr>
 		            
         
         </div>
@@ -63,66 +64,4 @@ $(document).ready(function(){
         
     </body>
 </html>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link  href="css/style.css" rel="stylesheet" type="text/css" >
-        <script type="text/javascript" src="js/jquery.js"></script>       
-        
-        
-      
-            <script type="text/javascript" >
-$(document).ready(function(){
- 				$.ajax({   
-                              type: "GET",
-                                async:true,
-                                dataType:'json',
-                                url: "user.json",
-                                complete: function(success,notify) {
-                             
-                                 },
-                                 dataFilter:function(data){
-	                                 obj = JSON.parse(data);
-	                                 for(var i=0;i<obj.length;i++)
-	                                   $('#data').append("<tr><td>"+obj[i].name+"</td><td>"+obj[i].email+"</td><td>"+obj[i].age+"</td><td>"+obj[i].gender+"</td><td>"+obj[i].address+"</td><td>"+obj[i].pincode+"</td><td>"+obj[i].description+"</td></tr>")
-	                                   $('#data').append("</table>")
- 												     },
-                             		success:function(){
-                                    
-                                         }
-        		});  
-        
-         });            
-            
-            
 
-</script>
-
-    </head>
-    <body>
-    
-    
-        
-        <div class="form">
-        <h2>DATA FROM SERVER:</h2>
-        <table id="data" border="1px">
-		  <th>NAME</th>        
-		  <th>EMAIL</th>
-		  <th>AGE</th>
-		  <th>GENDER</th>
-		  <th>ADDRESS</th>
-		  <th>PINCODE</th>
-		  <th>DESCRIPTION</th>
-		            
-        
-        </div>
-         
-       
-			
-		
-		 
-        
-    </body>
-</html>

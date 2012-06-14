@@ -143,7 +143,7 @@ root {
 #indicate{
 	position: absolute;
 	float: right;
-	top: 20%;
+	top: 25%;
 	right: 10%;
 	}
 	
@@ -154,4 +154,14 @@ root {
 	padding-left:20px;
 	top: 15%;
 	right: 10%;
+}
+
+.hanging{
+ background-image: "../images/hang.gif";
+ width: 90px;
+ height: 76px;
+ position: absolute;
+ bottom: 20%;
+ right: 10%;	
+	
 }

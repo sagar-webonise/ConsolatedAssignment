@@ -46,29 +46,43 @@
 
                 var name1 = document.getElementById(e_id).value;
                 if (name1){
-                name_v =1;
+               			 name_v =1;
                         document.getElementById(e_id).style.backgroundColor="green";
                         }
-                if(!name1){
+                else{
 					 	      document.getElementById(e_id).style.backgroundColor="blue";
-                        name1_v=0;
+                        name_v=0;
 					 	}
-                        break;
+				 if(!isNaN(name1)){
+					 			document.getElementById(e_id).style.backgroundColor="red";
+                        name_v=0;
+					 	
+					 		}
+                break;
+                
                         
 
             case "id_age":
                 var age = document.getElementById(e_id).value;
                 if(!isNaN(age))
                 {
+					 if(age>100)
+					 {
+					   age_v =0;
+                  document.getElementById(e_id).style.backgroundColor="red"; 	
+					 }
+					 else{                
                 age_v =1;
                 document.getElementById(e_id).style.backgroundColor="green";
+                }
                 }
                 else
                 {
                 age_v =0;
                 document.getElementById(e_id).style.backgroundColor="red";
-                        }
+                 }
                 break;
+                
             case "id_address":
                 var addr = document.getElementById(e_id).value;
                 if(addr)
@@ -81,17 +95,18 @@
                         addr_v=0;
 					 	}
                 break;
+                
             case "id_desc":
                 var desc = document.getElementById(e_id).value;
                 if(desc)
                 {
-                desc_v=1;
-                document.getElementById(e_id).style.backgroundColor="green";
+                	desc_v=1;
+                	document.getElementById(e_id).style.backgroundColor="green";
 
                 }
                 if(!desc){
-					 	      document.getElementById(e_id).style.backgroundColor="blue";
-                        desc_v=0;
+					 	document.getElementById(e_id).style.backgroundColor="blue";
+                  desc_v=0;
 					 	}
                 break;
 
@@ -99,7 +114,7 @@
             
                 var pincode = document.getElementById(e_id).value;
                 if(!isNaN(pincode) && (pincode.length==6)){
-          		      pin_v=1;
+          		       pin_v=1;
        					 document.getElementById(e_id).style.backgroundColor="green";
 
                 }
@@ -109,7 +124,7 @@
                 }
                 if(!pincode){
 					 	      document.getElementById(e_id).style.backgroundColor="blue";
-                        addr_v=0;
+                        pin_v=0;
 					 	}
                 
                 break;
@@ -262,8 +277,15 @@
 			<tr><td style="background-color:green; width:50px; height:50px"> </td>
 			<td style="background-color:red; width:50px; height:50px">   </td>
 			</tr>
-			
 			</table>
+			
+			<div class="hanging" />
+			</div>			
+       
+		  
+		  
+
+       </table>>	
         </div>
         <div class="right"></div>
         <div class="footer"></div>
