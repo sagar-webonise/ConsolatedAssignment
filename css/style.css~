@@ -129,6 +129,7 @@ div.row span.formw {
   float: right;
   width: 335px;
   text-align: left;
+  
   } 
   
 .list{
@@ -157,11 +158,34 @@ root {
 }
 
 .hanging{
- background-image: "../images/hang.gif";
+ background-image: url("../images/hang.gif");
  width: 90px;
  height: 76px;
  position: absolute;
- bottom: 20%;
+ bottom: 10%;
  right: 10%;	
 	
+}
+
+#messages{
+	position: absolute;
+	bottom: 32%;
+	right: 15%;		 
+   color: red;
+   width: 50px;
+height: 100px;
+    
+}
+
+#email_e{
+	display: None;
+}
+#name_e{
+	display: None;
+}
+#pincode_e{
+	display: None;
+	}
+#age_e{
+	display: None;
 }

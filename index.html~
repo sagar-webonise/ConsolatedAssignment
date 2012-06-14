@@ -30,15 +30,20 @@
                         if(validateEmail(e_id))
                         {
                                 document.getElementById(e_id).style.backgroundColor="green";
-                                email_v=1;   	 						
+                                email_v=1;   
+                                $('#email_e').hide();	 						
                         }
                 else {
                         document.getElementById(e_id).style.backgroundColor="red";
                         email_v=0;
+                        $('#email_e').show();
+                        
                         }
 					 if(!email){
 					 	      document.getElementById(e_id).style.backgroundColor="blue";
                         email_v=0;
+                         $('#email_e').hide();
+                      
 					 	}
                         break;
 
@@ -46,18 +51,23 @@
 
                 var name1 = document.getElementById(e_id).value;
                 if (name1){
-               			 name_v =1;
-                        document.getElementById(e_id).style.backgroundColor="green";
-                        }
-                else{
-					 	      document.getElementById(e_id).style.backgroundColor="blue";
-                        name_v=0;
-					 	}
-				 if(!isNaN(name1)){
+                
+                         if(!isNaN(name1)){
 					 			document.getElementById(e_id).style.backgroundColor="red";
+					 			$('#name_e').show();
                         name_v=0;
 					 	
 					 		}
+               			 name_v =1;
+                        document.getElementById(e_id).style.backgroundColor="green";
+                        $('#name_e').hide();
+                        }
+                else if(!name1){
+					 	      document.getElementById(e_id).style.backgroundColor="blue";
+                        name_v=0;
+                        $('#name_e').hide();
+					 	}
+					 
                 break;
                 
                         
@@ -69,17 +79,22 @@
 					 if(age>100)
 					 {
 					   age_v =0;
-                  document.getElementById(e_id).style.backgroundColor="red"; 	
+                  document.getElementById(e_id).style.backgroundColor="red";
+                  $('#age_e').show(); 	
 					 }
 					 else{                
                 age_v =1;
                 document.getElementById(e_id).style.backgroundColor="green";
+                $('#age_e').hide();
                 }
+                
+                	
                 }
                 else
                 {
                 age_v =0;
                 document.getElementById(e_id).style.backgroundColor="red";
+					$('#age_e').show();                
                  }
                 break;
                 
@@ -111,20 +126,23 @@
                 break;
 
             case "id_pincode":
-            
+             
                 var pincode = document.getElementById(e_id).value;
                 if(!isNaN(pincode) && (pincode.length==6)){
           		       pin_v=1;
        					 document.getElementById(e_id).style.backgroundColor="green";
+       					 $('#pincode_e').hide();
 
                 }
                 else{     						
             		    pin_v=0;
     					    document.getElementById(e_id).style.backgroundColor="red";
+    					    $('#pincode_e').show();
                 }
                 if(!pincode){
 					 	      document.getElementById(e_id).style.backgroundColor="blue";
                         pin_v=0;
+                        $('#pincode_e').hide();
 					 	}
                 
                 break;
@@ -281,11 +299,19 @@
 			
 			<div class="hanging" />
 			</div>			
-       
-		  <table id="messages">
-		  {}
-
-       </table>>	
+         <div id="messages">
+         
+		  	<table >
+		 	<tr><th>ERRORS</th></tr>
+			<tr><td id="name_e">* Name should not be of digits only</td></tr>		 	
+		 	<tr><td id="email_e">* Invalid email</td></tr>
+			<tr><td id="age_e">* Age should be int and less than 100 </td></tr>		 	
+		   <tr><td id="pincode_e">* pincode should be of 6 digits</td></tr>
+		   
+		   
+		 	 
+        </table>
+        	</div>
         </div>
         <div class="right"></div>
         <div class="footer"></div>
