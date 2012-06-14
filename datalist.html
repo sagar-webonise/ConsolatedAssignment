@@ -24,7 +24,7 @@ $(document).ready(function(){
                                  dataFilter:function(data){
 	                                 obj = JSON.parse(data);
 	                                 for(var i=0;i<obj.length;i++)
-	                                   $('#data').append("<tr><td>"+obj[i].name+"</td><td>"+obj[i].email+"</td><td>"+obj[i].age+"</td><td>"+obj[i].gender+"</td><td>"+obj[i].address+"</td><td>"+obj[i].pincode+"</td><td>"+obj[i].description+"</td></tr>")
+	                                   $('#data').append("<tr><td>"+(i+1)+"</td><td>"+obj[i].name+"</td><td>"+obj[i].email+"</td><td>"+obj[i].age+"</td><td>"+obj[i].gender+"</td><td>"+obj[i].address+"</td><td>"+obj[i].pincode+"</td><td>"+obj[i].description+"</td></tr>")
  												     },
                              		success:function(){
                                     
@@ -45,7 +45,10 @@ $(document).ready(function(){
         <div class="form">
         <h2>DATA FROM SERVER:</h2>
         <table id="data" border="1px">
-		  <tr><th>NAME</th>        
+          
+		  <tr>
+			<th>No.</th>		  
+		  <th>NAME</th>        
 		  <th>EMAIL</th>
 		  <th>AGE</th>
 		  <th>GENDER</th>
