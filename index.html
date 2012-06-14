@@ -88,8 +88,6 @@
                 document.getElementById(e_id).style.backgroundColor="green";
                 $('#age_e').hide();
                 }
-                
-                	
                 }
                 else
                 {
@@ -97,6 +95,12 @@
                 document.getElementById(e_id).style.backgroundColor="red";
 					$('#age_e').show();                
                  }
+                 if(!age){
+          		      age_v =0;
+               		document.getElementById(e_id).style.backgroundColor="blue";
+                 
+                 }
+               
                 break;
                 
             case "id_address":

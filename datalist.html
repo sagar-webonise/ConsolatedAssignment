@@ -10,18 +10,16 @@
 
             <script type="text/javascript" >
 $(document).ready(function(){
-
-
-
- $.ajax({   
-                              type: "GET",
+	
+ /*$.ajax({   
+                                type: "GET",
                                 async:true,
                                 dataType:'json',
                                 url: "user.json",
                                 complete: function(data,data1) {
                              
                                  },
-                                 dataFilter:function(data){
+                                dataFilter:function(data){
 	                                 obj = JSON.parse(data);
 	                                 for(var i=0;i<obj.length;i++)
 	                                   $('#data').append("<tr><td>"+(i+1)+"</td><td>"+obj[i].name+"</td><td>"+obj[i].email+"</td><td>"+obj[i].age+"</td><td>"+obj[i].gender+"</td><td>"+obj[i].address+"</td><td>"+obj[i].pincode+"</td><td>"+obj[i].description+"</td></tr>")
@@ -32,9 +30,17 @@ $(document).ready(function(){
         });  
         
          });            
+*/            
             
-            
-
+            $.getJSON("user.json" , function(data)
+            {
+            	obj=data;
+            	//obj=JSON.parse(data);
+               for(var i=0;i<obj.length;i++)
+	                $('#data').append("<tr><td>"+(i+1)+"</td><td>"+obj[i].name+"</td><td>"+obj[i].email+"</td><td>"+obj[i].age+"</td><td>"+obj[i].gender+"</td><td>"+obj[i].address+"</td><td>"+obj[i].pincode+"</td><td>"+obj[i].description+"</td></tr>");
+ 				
+            });
+});
 </script>
 
     </head>
@@ -42,7 +48,7 @@ $(document).ready(function(){
     
     
         
-        <div class="form">
+        <div class="list">
         <h2>DATA FROM SERVER:</h2>
         <table id="data" border="1px">
           

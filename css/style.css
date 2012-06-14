@@ -17,6 +17,8 @@ root {
 	
 	border : 1px solid #D4D4D4;
 	position: relative;
+	background-image: url('../images/bg.gif') norepeat;
+	background-repeat: None
 	
 	
 }
@@ -176,6 +178,11 @@ root {
 height: 100px;
     
 }
+.list{
+	background-color: #FEFEF2;
+	float: center;
+	
+	}
 
 #email_e{
 	display: None;
@@ -188,4 +195,11 @@ height: 100px;
 	}
 #age_e{
 	display: None;
+}
+
+
+
+#data tr{
+background-color: #def;
+	
 }
